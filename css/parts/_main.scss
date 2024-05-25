@@ -1,0 +1,135 @@
+@use 'mixin' as m;
+
+main {
+    .mv-box {
+        padding-top:80px;
+        .mv {
+            width: 100%;
+            height: calc(100vh - 80px);
+            background-image: url(../img/mv.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: right center;
+
+            @include m.pc {
+                background-position: center;
+            }
+
+            @include m.tab {
+                background-position: right;
+            }
+
+            @include m.sp {
+                height: 200px;
+                ;
+            }
+
+        }
+
+        .mv-text {
+            position: absolute;
+            top: 20%;
+            left: 10%;
+
+            @include m.sp {
+                position: static;
+                text-align: center;
+                padding: 10% 5%;
+            }
+
+            .pc-message {
+                display: block;
+                font-size: 40px;
+                padding-bottom: 24px;
+
+                @include m.tab {
+                    display: none;
+                }
+            }
+
+            .tab-message {
+                display: none;
+
+                @include m.tab {
+                    font-size: 32px;
+                    display: block;
+                }
+
+                @include m.sp {
+                    font-size: 24px;
+                }
+
+            }
+
+            .noto-serif-jp-regular {
+                font-size: 24px;
+
+                @include m.tab {
+                    font-size: 16px;
+                }
+
+                p {
+                    padding-bottom: 24px;
+
+                    @include m.tab {
+                        padding-bottom: 16px;
+                    }
+                }
+
+                a {
+                    width: 432px;
+                    display: inline-block;
+                    background-color: #e6b05f;
+                    border-radius: 50px;
+                    text-align: center;
+                    padding-block: 8px;
+                    transition: 0.5s;
+                    box-shadow: 0px -1px 13px 4px rgba(17, 17, 26, 0.07);
+
+                    @include m.tab {
+                        width: 300px;
+                    }
+
+                    @include m.sp {
+                        width: 100%;
+                    }
+
+                    &:hover {
+                        transform: scale(1.1);
+
+                        @include m.sp {
+                            transform: scale(1);
+                            background-color:#F9F7F0;
+                            outline:2px solid #e6b05f;
+                            outline-offset: -2px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .slick {
+        background-image: url(../img/背景画像.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 500px;
+        padding-top: 100px;
+
+        .slide-items {
+            li {
+                width: 250px;
+                height: 250px;
+                padding-right: 20px;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 40px;
+                }
+            }
+        }
+    }
+}
