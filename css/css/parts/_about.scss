@@ -1,0 +1,86 @@
+@use 'mixin' as m;
+// about
+#about {
+    padding-block:120px;
+    @include m.sp{
+        padding-block:64px;
+    }
+
+    .about-contents {
+        li {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            // gap: 24px;
+            margin-block:65px 40px;
+
+            @include m.tab {
+                flex-direction: column;
+            }
+        }
+        .fadein {
+            opacity: 0;
+            transition: all 1s;
+            transform: translateY(30px);
+        }
+        .revers{
+            @include m.tab{
+                flex-direction: column-reverse;
+            }
+        }
+
+        img {
+            width: 400px;
+            height: auto;
+        }
+
+        .about-text {
+            text-align: center;
+            padding: 48px;
+            @include m.tab{
+            width:75%;
+            }
+            @include m.sp{
+                width:80%;
+            }
+
+            .about-text-title {
+                font-size: 24px;
+                padding-bottom: 32px;
+                @include m.sp{
+                    font-size: 20px;
+                }
+
+                .about-text-content {
+                    font-size: 16px;
+                }
+            }
+        }
+
+        .family {
+            background-image: url(../img/家族背景.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .walk {
+            background-image: url(../img/散歩背景.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .meal {
+            background-image: url(../img/食事背景.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+
+            .about-text-content {
+                padding-bottom: 40px;
+            }
+        }
+
+    }
+}
